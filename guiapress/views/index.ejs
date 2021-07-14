@@ -1,0 +1,31 @@
+<%- include ('./partials/header.ejs')%>
+<%- include ('./partials/homenavbar.ejs')%>
+<body>
+    <div class="container">        
+        
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Bem vindo!</h1>
+        <p class="col-md-8 fs-4">Este é um blog simples</p>        
+      </div>
+    
+      <br>
+      <% articles.forEach( article => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title%></h2>
+                </div>
+                <div class="card-body">
+                    <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+                </div>
+            </div>
+            <br>
+       <% }) %>
+       <div class="row">
+           <div class="col col-12">
+               <a style="float: right" href="/articles/page/2">Próximo >></a>
+           </div>
+       </div>
+       <br>
+    </div> 
+</body>
+<%- include ('./partials/footer.ejs')%>
